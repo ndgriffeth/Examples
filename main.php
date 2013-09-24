@@ -2,5 +2,5 @@
 
 <?php
 date_default_timezone_set("America/New_York");
-echo date('H:i, jS F Y');
+echo "Order processed at".date('H:i, jS F Y');
 ?>
