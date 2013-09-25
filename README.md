@@ -13,3 +13,7 @@ main1.html: User input and computations
 
     uses main1.php
     
+testinputs.html: Demonstrates variables passed from text boxes
+
+    uses testinputs.php
+    
