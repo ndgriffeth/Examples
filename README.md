@@ -3,7 +3,7 @@ Examples
 
 Examples used in lectures
 
-September 25
+# September 25
 
 main.html: Building and Processing a Page
 
