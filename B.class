@@ -1,0 +1,43 @@
+<?php
+include_once('A.class');
+
+class B extends A
+{
+function __construct($val)
+{
+     print "***This is the constructor for class B***<br />";
+	$this->sub_x = $val;
+	parent::__construct();
+}
+
+function notconstruct()
+{
+	print "***This is a regular function for B***<br />";
+	parent::__construct();   // works as expected
+}
+
+function __set($name, $value) 
+{
+	print "***This is the setter for class B: set $name to $value ***<br />";
+	#parent::__set($name,$value);
+	$this->$name = $value;
+}
+
+function __get($name)
+{
+	print "***This is the getter for class B: return the value of ".$name." ***<br />";
+	return $this->$name;
+}
+
+function __toString()
+{
+	print "*** This is the toString method for B***<br />";
+	$x = "";
+	$x = $x." ".parent::__toString();
+	$x = $x." ".$this->sub_x;
+    return $x;
+}
+
+private $sub_x;
+}
+?>

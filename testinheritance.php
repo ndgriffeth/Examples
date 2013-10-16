@@ -1,72 +1,9 @@
 <?php
-class A
-{
-function __construct()
-{
-	print "***This is the constructor for class A***<br />";
-	$this->super_x = 1;
-}
 
-function __set($name, $value)
-{
-	print "***This is the setter for class A: set $name to $value ***<br />";
-	$this->$name = $value;
-}
+include_once('A.class');
+include_once('B.class');
 
-function __get($name)
-{
-	print "***This is the getter for class A: return the value of $name ***<br />";
-	return $this->$name;
-}
 
-function __toString() 
-{
-	print "***This is the toString method for A***<br />";
-	$x = $this->super_x;
-	settype($x, 'string');
-    return $x;
-}
-
-private $super_x;
-}
-
-class B extends A
-{
-function __construct($val)
-{
-     print "***This is the constructor for class B***<br />";
-	$this->sub_x = $val;
-	#parent::__construct();
-}
-
-function notconstruct()
-{
-	print "***This is a regular function for B***<br />";
-	parent::__construct();   // works as expected
-}
-
-function __set($name, $value) 
-{
-	print "***This is the setter for class B: set $name to $value ***<br />";
-	#parent::__set($name,$value);
-	$this->$name = $value;
-}
-
-function __get($name)
-{
-	print "***This is the getter for class B: return the value of ".$name." ***<br />";
-	return $this->$name;
-}
-
-function __toString()
-{
-	print "*** This is the toString method for B***<br />";
-	$x = parent::__toString()." ".$this->sub_x;
-    return $x;
-}
-
-private $sub_x;
-}
 
 $a = new A();
 print '$a->super_x is '.$a->super_x.'<br />';

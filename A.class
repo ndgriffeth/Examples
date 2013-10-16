@@ -1,0 +1,32 @@
+<?php
+class A
+{
+function __construct()
+{
+	print "***This is the constructor for class A: sets super_x to 1 ***<br />";
+	$this->super_x = 1;
+}
+
+function __set($name, $value)
+{
+	print "***This is the setter for class A: set $name to $value ***<br />";
+	$this->$name = $value;
+}
+
+function __get($name)
+{
+	print "***This is the getter for class A: return the value of $name ***<br />";
+	return $this->$name;
+}
+
+function __toString() 
+{
+	print "***This is the toString method for A***<br />";
+	$x = $this->super_x;
+	settype($x, 'string');
+    return $x;
+}
+
+protected $super_x;
+}
+?>
