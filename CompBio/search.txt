@@ -1,0 +1,7 @@
+ <form action="search.php" method="post">
+Search: <input type="text" name="terms">
+<input type="submit">
+</form>
+<form action="advancedsearch.php" method="post">
+<input type="submit" value="Advanced Search">
+</form>
