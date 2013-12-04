@@ -8,7 +8,7 @@ session_commit();
 
 echo "Set session id for second session to abc<br />";
 $new_sid = session_id("abc");
-session_start(); 
+//session_start(); 
 $_SESSION['whichSession'] = "second";
 session_commit();
 

@@ -6,8 +6,9 @@ var_dump($_SESSION);
 echo '<br />';
 $params = session_get_cookie_params();
 echo 'session_get_cookie_params()'.'<br />';
-var_dump($params);
-echo '<br />';
+foreach ($params as $key=>$value) {
+   echo $key." => ".$value.'<br />';
+}
 echo 'session_cache_expire() '.session_cache_expire().'<br />';
 var_dump($_SESSION);
 echo '<br />';
