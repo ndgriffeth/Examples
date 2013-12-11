@@ -10,11 +10,7 @@ foreach ($params as $key=>$value) {
    echo $key." => ".$value.'<br />';
 }
 echo 'session_cache_expire() '.session_cache_expire().'<br />';
-var_dump($_SESSION);
-echo '<br />';
 echo 'session_cache_limiter() '.session_cache_limiter().'<br />';
-var_dump($_SESSION);
-echo '<br />';
 echo 'session_encode()';
 $data = session_encode();
 var_dump($data);
